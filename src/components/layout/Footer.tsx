@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Suspense } from "react";
+import Year from "./Year";
 
 export default function Footer() {
   return (
@@ -29,7 +31,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-neutral-800 py-4 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} Urban Gears. All rights reserved.
+        © <Suspense fallback="2026"><Year /></Suspense> Urban Gears. All rights reserved.
       </div>
     </footer>
   );
