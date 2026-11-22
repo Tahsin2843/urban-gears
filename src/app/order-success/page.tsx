@@ -1,23 +1,23 @@
+import { Suspense } from "react";
 import Link from "next/link";
+import OrderId from "./OrderId";
 
 export const metadata = { title: "Order placed" };
 
-export default async function OrderSuccess({
-  searchParams,
-}: {
-  searchParams: Promise<{ id?: string }>;
-}) {
-  const { id } = await searchParams;
-
+export default function OrderSuccess() {
   return (
     <section className="mx-auto max-w-xl px-4 py-16 text-center">
       <p className="text-5xl">✅</p>
       <h1 className="mt-4 font-display text-2xl font-bold md:text-3xl">
         Thank you! Your order is placed.
       </h1>
-      {id && <p className="mt-2 text-neutral-500">Order number: <b>{id}</b></p>}
+
+      <Suspense fallback={null}>
+        <OrderId />
+      </Suspense>
+
       <p className="mt-4 text-neutral-700">
-        We'll call you soon to confirm your order. Please keep your phone nearby.
+        We&apos;ll call you soon to confirm your order. Please keep your phone nearby.
       </p>
       <Link
         href="/products"
