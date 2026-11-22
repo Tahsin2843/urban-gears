@@ -17,20 +17,3 @@
     #ff8552
   );
 }
-
-.marquee-group {
-  animation: marquee 35s linear infinite;
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(calc(-100% - 25px));
-  }
-}
-
-/* Respect users who turn off motion */
-@media (prefers-reduced-motion: reduce) {
-  .marquee-group {
-    animation: none;
-  }
-}

@@ -1,31 +1,86 @@
-const messages = ["90-DAY MONEY BACK GUARANTEE", "FAST SHIPPING"];
+"use client";
 
-function Group({ hidden = false }: { hidden?: boolean }) {
-  // Repeat the messages so one group is always wider than a phone screen
-  const items = Array.from({ length: 5 }).flatMap(() => messages);
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
+
+const messages = [
+  "30-DAY MONEY BACK GUARANTEE",
+  "FAST SHIPPING",
+  "CASH ON DELIVERY",
+];
+
+export default function AnnouncementBar() {
+  const root = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const items = gsap.utils.toArray<HTMLElement>(".msg");
+        const tl = gsap.timeline({ repeat: -1 });
+
+        items.forEach((item) => {
+          tl.fromTo(
+            item,
+            {
+              y: 14,
+              filter: "blur(8px)",
+              autoAlpha: 0,
+            },
+            {
+              y: 0,
+              filter: "blur(0px)",
+              autoAlpha: 1,
+              duration: 0.65,
+              ease: "power3.out",
+            }
+          ).to(item, {
+            y: -14,
+            filter: "blur(8px)",
+            autoAlpha: 0,
+            duration: 0.5,
+            ease: "power3.in",
+            delay: 2,
+          });
+        });
+
+        const el = root.current;
+        if (!el) return;
+
+        const pause = () => tl.pause();
+        const play = () => tl.play();
+
+        el.addEventListener("mouseenter", pause);
+        el.addEventListener("mouseleave", play);
+
+        return () => {
+          el.removeEventListener("mouseenter", pause);
+          el.removeEventListener("mouseleave", play);
+        };
+      });
+
+      return () => mm.revert();
+    },
+    { scope: root }
+  );
 
   return (
     <div
-      aria-hidden={hidden}
-      className="marquee-group flex min-w-full shrink-0 items-center justify-around gap-[25px]"
+      ref={root}
+      className="announcement-bg relative h-[36px] select-none overflow-hidden"
     >
-      {items.map((text, i) => (
-        <div key={i} className="flex shrink-0 items-center gap-[25px]">
-          <p className="whitespace-nowrap text-xs font-extrabold tracking-[0.5px] text-white">
-            {text}
-          </p>
-          <span className="h-1.5 w-1.5 rounded-full bg-white" />
-        </div>
+      {messages.map((text) => (
+        <p
+          key={text}
+          className="msg absolute inset-0 flex items-center justify-center whitespace-nowrap text-xs font-extrabold tracking-[2px] text-white opacity-0"
+        >
+          {text}
+        </p>
       ))}
-    </div>
-  );
-}
-
-export default function AnnouncementBar() {
-  return (
-    <div className="announcement-bg flex select-none gap-[25px] overflow-hidden py-[5px]">
-      <Group />
-      <Group hidden />
     </div>
   );
 }
