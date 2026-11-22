@@ -11,6 +11,10 @@ export const products: Product[] = [
       "/images/products/silicone-water-bottle/1.jpg",
       "/images/products/silicone-water-bottle/2.jpg",
       "/images/products/silicone-water-bottle/3.jpg",
+      "/images/products/silicone-water-bottle/4.jpg",
+      "/images/products/silicone-water-bottle/5.jpg",
+      "/images/products/silicone-water-bottle/6.jpg",
+
     ],
     inStock: true,
     featured: true,

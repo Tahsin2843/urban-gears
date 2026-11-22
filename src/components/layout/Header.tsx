@@ -19,7 +19,7 @@ export default function Header() {
       <div className="mx-auto flex h-10 max-w-6xl items-center justify-between px-4">
         <Link href="/" onClick={() => setOpen(false)}>
           <Image
-            src="/images/logo-dark.svg"
+            src="/images/logo.png"
             alt="Urban Gears"
             width= {40}
             height={40}
