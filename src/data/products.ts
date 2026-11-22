@@ -3,7 +3,7 @@ import type { Product } from "@/types/product"
 export const products: Product[] = [
   {
     slug: "silicone-water-bottle",
-    name: "Silicone Water Bottle",
+    name: "Foldable Water Bottle",
     price: 450,
     description:
       "A soft, foldable silicone water bottle that is light, leak-resistant, and easy to carry. Squeeze it flat when empty and slip it into your bag.",

@@ -35,7 +35,7 @@ export default function AnnouncementBar() {
               y: 0,
               filter: "blur(0px)",
               autoAlpha: 1,
-              duration: 0.65,
+              duration: 0.35,
               ease: "power3.out",
             }
           ).to(item, {
@@ -44,7 +44,7 @@ export default function AnnouncementBar() {
             autoAlpha: 0,
             duration: 0.5,
             ease: "power3.in",
-            delay: 2,
+            delay: 1,
           });
         });
 
