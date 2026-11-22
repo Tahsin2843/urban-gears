@@ -3,7 +3,7 @@ import type { Product } from "@/types/product"
 export const products: Product[] = [
   {
     slug: "silicone-water-bottle",
-    name: "Foldable Water Bottle",
+    name: "Foldabfle Water Bottle",
     price: 450,
     description:
       "A soft, foldable silicone water bottle that is light, leak-resistant, and easy to carry. Squeeze it flat when empty and slip it into your bag.",
@@ -24,43 +24,61 @@ export const products: Product[] = [
       "Soft, lightweight silicone you can carry all day",
       "Easy to rinse and dry",
     ],
-    infoSections: [
+   infoSections: [
+  {
+    title: "What to expect?",
+    paragraphs: [
+      "A soft, foldable 600ml water bottle made from silicone. When it's full, it holds its shape. When it's empty, you can fold it down small and slip it into a bag, a pocket or a gym kit.",
+      "It has a wide opening, so it's easy to fill, drink from and clean. The screw-top lid closes tightly, and a carrying loop lets you clip it to a bag or hang it from your hand.",
+      "It's light enough for school, the gym, the office, cycling, a trip or a day out. Fill it up, carry it, fold it when you're done.",
+    ],
+  },
+  {
+    title: "Frequently asked questions?",
+    qa: [
       {
-        title: "What to expect?",
-        paragraphs: [
-          "Write a short intro: what the product is and who it's for.",
-          "Describe how it works and what the customer gets in the box.",
-        ],
+        q: "How much water does it hold?",
+        a: "600 ml, which is a little over two glasses of water.",
       },
       {
-        title: "Frequently asked questions?",
-        qa: [
-          {
-            q: "How do I clean it?",
-            a: "Write your real care instructions here.",
-          },
-          {
-            q: "Can I pay on delivery?",
-            a: "Yes, cash on delivery is available. You pay when you receive the product.",
-          },
-          {
-            q: "Can I return or exchange it?",
-            a: "Write your real return or exchange policy here.",
-          },
-          {
-            q: "How long does delivery take?",
-            a: "Write your real delivery time here.",
-          },
-        ],
+        q: "Does it leak?",
+        a: "The screw-top lid is made to close tightly. Screw it on fully and keep the bottle upright, especially when it's full, and avoid squeezing it hard with the lid on.",
       },
       {
-        title: "Shipping information",
-        paragraphs: [
-          "Delivery charge: ৳70 inside Dhaka, ৳120 outside Dhaka. Pay cash on delivery.",
-          "Write your real processing and delivery time here.",
-        ],
+        q: "What is it made of?",
+        a: "Soft silicone with a plastic lid. [CONFIRM WITH SUPPLIER: BPA-free / food-grade]",
+      },
+      {
+        q: "How do I clean it?",
+        a: "Rinse it with warm water and a little mild soap, then let it dry with the lid off. The wide opening makes it easy to reach inside.",
+      },
+      {
+        q: "Can I put hot drinks in it?",
+        a: "We recommend it for water and cold drinks. Please don't pour in boiling water.",
+      },
+      {
+        q: "Which colors are available?",
+        a: "[LIST YOUR REAL COLORS, e.g. Green, Pink]",
+      },
+      {
+        q: "Can I pay on delivery?",
+        a: "Yes. Cash on delivery is available all over Bangladesh. You pay when you receive the bottle.",
+      },
+      {
+        q: "Can I return or exchange it?",
+        a: "[YOUR REAL RETURN / EXCHANGE POLICY]",
       },
     ],
+  },
+  {
+    title: "Shipping information",
+    paragraphs: [
+      "We deliver all over Bangladesh. Delivery charge is ৳70 inside Dhaka and ৳120 outside Dhaka.",
+      "Delivery time: [YOUR REAL DELIVERY TIME, e.g. 1–2 days inside Dhaka, 3–5 days outside].",
+      "After you place your order, we'll call you to confirm it before we send it. You pay in cash when the bottle arrives.",
+    ],
+  },
+],
     reasonBlocks: [
       {
         title: "Folds flat when you're done",
