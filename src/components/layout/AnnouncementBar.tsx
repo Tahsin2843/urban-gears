@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 const messages = [
-  "30-DAY MONEY BACK GUARANTEE",
+  "GEAR UP! STAY AHEAD!",
   "FAST SHIPPING",
   "CASH ON DELIVERY",
 ];
